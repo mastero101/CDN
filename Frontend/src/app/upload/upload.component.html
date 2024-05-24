@@ -1,0 +1,17 @@
+<h2>Subir Imágenes</h2>
+<div class="upload-container">
+    <label for="file-input">
+        <mat-icon>attach_file</mat-icon>
+    </label>
+    <input id="file-input" type="file" (change)="onFileSelected($event)" multiple accept=".jpg,.jpeg,.png,.mp4,.mov,.avi,.mkv">
+    <button mat-flat-button color="primary" (click)="onUpload()">Subir Imágenes</button>
+    <div *ngIf="uploadProgress !== undefined" class="progress-container mat-elevation-z2">
+        <div class="progress-bar mat-elevation-z2" [style.width.%]="uploadProgress"></div>
+        <div class="progress-details">
+          {{ getUploadedMegabytes() | number: '1.2-2' }} MB / {{ totalBytes / (1024 * 1024) | number: '1.2-2' }} MB
+          ({{ getUploadSpeed() | number: '1.2-2' }} MB/s)
+        </div>
+    </div>
+</div>
+
+

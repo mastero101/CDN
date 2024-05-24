@@ -1,0 +1,64 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Cambia el número de columnas según el ancho de la pantalla */
+  gap: 16px;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  max-width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  margin-bottom: 8px;
+  cursor: pointer; 
+}
+
+button {
+  margin-top: 8px;
+}
+
+.image-item img,
+.image-item video {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+ 
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; // margen inferior para separar la barra de búsqueda de la cuadrícula de imágenes
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #757575; // color del icono
+}
+
+input[type="text"] {
+  padding: 10px 10px 10px 40px; // añadir espacio para el icono
+  width: 100%; // ajusta el ancho según sea necesario
+  border: 1px solid #ccc; // color del borde
+  border-radius: 4px; // esquinas redondeadas
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); // sombra
+  font-size: 16px; // tamaño de la fuente
+}
+
+input[type="text"]:focus {
+  border-color: #3f51b5; // color del borde al enfocar
+  outline: none; // eliminar el contorno predeterminado
+}
