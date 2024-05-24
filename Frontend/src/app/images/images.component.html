@@ -5,13 +5,13 @@
 <div class="image-grid">
   <div *ngFor="let image of paginatedImages" class="image-item">
     <ng-container *ngIf="isVideo(image); else imageTemplate">
-      <video width="100" height="100" (click)="openVideoDialog('http://localhost:1001/image/' + image)">
-        <source [src]="'http://localhost:1001/image/' + image" type="video/mp4">
+      <video width="100" height="100" (click)="openVideoDialog(getFullImageUrl(image))">
+        <source [src]="getFullImageUrl(image)" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </ng-container>
     <ng-template #imageTemplate>
-      <img [src]="'http://localhost:1001/image/' + image" alt="Image" (click)="openImageDialog('http://localhost:1001/image/' + image, image)">
+      <img [src]="getFullImageUrl(image)" alt="Image" (click)="openImageDialog(getFullImageUrl(image), image)">
     </ng-template>
     <button mat-flat-button color="warn" (click)="onDelete(image)">Delete</button>
   </div>
@@ -21,6 +21,7 @@
                [pageSizeOptions]="[5, 10, 15, 30]" 
                (page)="changePage($event)">
 </mat-paginator>
+
 
 
 

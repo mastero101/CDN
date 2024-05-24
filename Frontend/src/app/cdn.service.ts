@@ -5,7 +5,7 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class CdnService {
-  private baseUrl = 'http://192.168.1.91:1001';
+  private baseUrl = 'http://132.145.206.61:1001';
 
   async uploadFile(file: File, config?: any): Promise<any> {
     const formData = new FormData();
@@ -50,5 +50,9 @@ export class CdnService {
       console.error('Error fetching images', error);
       throw error;
     }
+  }
+
+  getImageUrl(imageId: string): string {
+    return `${this.baseUrl}/image/${imageId}`;
   }
 }

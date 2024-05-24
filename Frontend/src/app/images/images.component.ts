@@ -102,4 +102,8 @@ export class ImagesComponent implements OnInit {
   isVideo(fileName: string): boolean {
     return fileName.endsWith('.mp4');
   }
+
+  getFullImageUrl(imageId: string): string {
+    return this.cdnService.getImageUrl(imageId);
+  }
 }
