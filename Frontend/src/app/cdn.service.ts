@@ -5,7 +5,7 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class CdnService {
-  private baseUrl = 'http://masteroscdn.cloud';
+  private baseUrl = 'https://masteroscdn.cloud';
 
   async uploadFile(file: File, config?: any): Promise<any> {
     const formData = new FormData();
